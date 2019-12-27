@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>
+            <a mat-icon-button routerLink="/contacts">
+                <mat-icon>arrow_back</mat-icon>
+            </a>
+            Create New Contact
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+
+    <mat-grid-list cols="1" rowHeight="4:1">
+        <mat-grid-tile>
+            <!-- form should come-->
+            <!-- Step4: Patch up the TS side with html  -->
+            <form class="contact-form" [formGroup]="contactForm">
+                <span *ngIf="isSaved">
+                    <p>Saved Successfully</p>
+                </span>
+                <mat-form-field class="contact-fields-full-width">
+                    <!-- step5: patch up the TS formControl with input elements -->
+                    <input matInput formControlName="name" placeholder="Enter Name" required>
+                    <mat-error>
+                        Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="contact-fields-full-width">
+                    <input matInput type="email" formControlName="email" placeholder="Enter E-Mail" required>
+                    <!-- <mat-error *ngIf="contactForm.email.hasError('email')">
+                        Please enter a valid email address
+                    </mat-error> -->
+                    <mat-error>Email is <strong>required</strong></mat-error>
+                </mat-form-field>
+                <mat-form-field class="contact-fields-full-width">
+                    <input matInput formControlName="phone" placeholder="Enter Phone" required>
+                    <mat-error>
+                        Phone Number is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="accent" (click)="onCreateContact()">Create Contact</button>
+            </form>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

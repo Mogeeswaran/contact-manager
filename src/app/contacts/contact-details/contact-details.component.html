@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span *ngIf='contact'>
+      <a mat-icon-button routerLink="/contacts">
+        <mat-icon>arrow_back</mat-icon>
+      </a> {{contact.name}}
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+
+  <mat-grid-list cols="1" rowHeight="6:2">
+    <mat-grid-tile>
+      
+      <mat-card class="detail-card" *ngIf='contact'>
+        <span *ngIf="isSaved">
+          <p>Updated Successfully</p>
+        </span>
+        <mat-card-title>{{contact.name}}</mat-card-title>
+        <mat-card-subtitle>{{contact.email}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>Phone No:{{contact.phone}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="openEditDialog()" color="primary">Edit</button>
+          <button mat-raised-button>Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>

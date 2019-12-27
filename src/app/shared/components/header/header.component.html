@@ -1,0 +1,28 @@
+<mat-toolbar color="primary"
+    class="mat-toolbar-header mat-elevation-z18">
+    <span>Contact Manager</span>
+    <span class="header-spacer"></span>
+    <div>
+        <a mat-button routerLink="/">  <!-- Step 1-->
+            <mat-icon>home</mat-icon>
+        </a>
+        <a mat-button routerLink="/demo">Material Demo</a>
+        <a mat-button routerLink="/contacts">contacts</a>
+
+        <!-- <button mat-button [matMenuTriggerFor]="contacts" routerLink="/contacts">Contacts</button>
+        <mat-menu #contacts="matMenu">
+            <a mat-menu-item routerLink="/contacts/add">Add Contacts</a>
+            <a mat-menu-item routerLink="/contacts/view">View Contacts</a>
+        </mat-menu> -->
+
+        <a mat-button routerLink="/about">About</a>
+        <span class="header-button-row">
+            <button mat-raised-button color='accent' routerLink="login">
+                <mat-icon>lock</mat-icon>Sign in
+            </button>
+            <button mat-raised-button color='accent' routerLink="signup">
+                <mat-icon>perm_identity</mat-icon>Sign up
+            </button>
+        </span>
+    </div>
+</mat-toolbar>

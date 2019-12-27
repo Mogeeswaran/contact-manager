@@ -1,0 +1,10 @@
+mat-grid-tile {
+    background: lightblue;
+}
+.mat-list-icon {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.example-chip-list {
+    width: 100%;
+}
