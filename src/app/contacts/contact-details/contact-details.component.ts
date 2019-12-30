@@ -46,7 +46,7 @@ export class ContactDetailsComponent implements OnInit {
 
       if (updatedContactData != 'nope') {
         const status: any = await this.contactService.updateContact(updatedContactData)
-        if (status && status.id) {
+        if (status && status.contactId) {
           this.loadContactData();
           console.log('status');
           this.isSaved = true;

@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactService {
-  REST_API_URL = 'https://jsonplaceholder.typicode.com/users';
+  // REST_API_URL = 'https://jsonplaceholder.typicode.com/users';
+  REST_API_URL = 'http://localhost:3000/api/contacts';
 
   constructor(private http: HttpClient) { }
 
@@ -63,10 +64,10 @@ export class ContactService {
   }
 
   updateContact(upddateableContactData){
-    console.log(upddateableContactData);
+    console.log(upddateableContactData.contactId);
 
     const updateContactPromise = new Promise( (resolve, reject) =>{  
-      this.http.put(this.REST_API_URL+'/'+upddateableContactData.id, upddateableContactData)
+      this.http.put(this.REST_API_URL+'/'+upddateableContactData.contactId, upddateableContactData)
         .toPromise()
         .then((res: any) => {
           console.log(res);
